@@ -14,25 +14,33 @@ class AddStudentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_student)
+
         supportActionBar?.title = "Thêm Sinh Viên"
+
         val edtName = findViewById<EditText>(R.id.edtName)
         val edtMSSV = findViewById<EditText>(R.id.edtMSSV)
+        val edtPhone = findViewById<EditText>(R.id.edtPhone)
+        val edtEmail = findViewById<EditText>(R.id.edtEmail)
         val btnSave = findViewById<Button>(R.id.btnAdd)
 
         btnSave.setOnClickListener {
             val name = edtName.text.toString().trim()
             val mssv = edtMSSV.text.toString().trim()
+            val phone = edtPhone.text.toString().trim()
+            val email = edtEmail.text.toString().trim()
 
-            // Kiểm tra tên và MSSV
+
             if (name.isNotEmpty() && mssv.isNotEmpty()) {
-                val resultIntent = Intent()
-                resultIntent.putExtra("student_name", name)
-                resultIntent.putExtra("student_mssv", mssv)
+                val resultIntent = Intent().apply {
+                    putExtra("student_name", name)
+                    putExtra("student_mssv", mssv)
+                    putExtra("student_phone", phone)
+                    putExtra("student_email", email)
+                }
                 setResult(RESULT_OK, resultIntent)
                 finish()
             } else {
-                // Hiển thị thông báo nếu không nhập đủ dữ liệu
-                Toast.makeText(this, "Vui lòng nhập đầy đủ tên và MSSV", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
             }
         }
     }

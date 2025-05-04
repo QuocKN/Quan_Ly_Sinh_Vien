@@ -28,15 +28,15 @@
             android:textColor="#666666"/>
     </LinearLayout>
 
-    <!-- Nút options -->
-<!--    <ImageView-->
-<!--        android:id="@+id/btnOptions"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@android:drawable/ic_menu_more"-->
-<!--        android:contentDescription="Options"-->
-<!--        android:layout_gravity="center_vertical"-->
-<!--        android:paddingStart="16dp"-->
-<!--        android:paddingEnd="16dp" />-->
+<!--     Nút options -->
+    <ImageView
+        android:id="@+id/btnOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_more"
+        android:contentDescription="Options"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
 
 </LinearLayout>
